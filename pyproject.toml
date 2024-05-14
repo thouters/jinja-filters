@@ -39,6 +39,8 @@ python = ">=3.8.1,<4.0"
 pelican = "^3 || ^4"
 markdown = {version = ">=3.2", optional = true}
 titlecase = "^1.1.1 || ^2"
+# Avoid PyPI/Poetry problem: https://github.com/python-poetry/poetry/issues/9293
+docutils = "!=0.21.post1"
 
 [tool.poetry.dev-dependencies]
 black = "^24"
