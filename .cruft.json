@@ -1,0 +1,28 @@
+{
+  "template": "https://github.com/getpelican/cookiecutter-pelican-plugin",
+  "commit": "36d2e1e6ab70b513f83dd1a6183e6ba299fe329c",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "plugin_name": "Jinja Filters",
+      "repo_name": "jinja-filters",
+      "package_name": "jinja_filters",
+      "distribution_name": "pelican-jinja-filters",
+      "version": "2.1.1",
+      "description": "Pelican plugin for applying useful Jinja filters in theme templates",
+      "authors": "{name = \"William Minchin\", email = \"w_minchin@hotmail.com\"}, {name = \"Justin Mayer\", email = \"entroP@gmail.com\"}",
+      "keywords": "\"jinja2\", \"templates\", \"pelican\", \"plugin\"",
+      "readme": "README.md",
+      "contributing": "CONTRIBUTING.md",
+      "license": "MIT License|MIT",
+      "repo_url": "https://github.com/pelican-plugins/jinja-filters",
+      "dev_status": "5 - Production/Stable",
+      "tests_exist": true,
+      "python_version": "~=3.9",
+      "pelican_version": ">=4.5",
+      "_template": "https://github.com/getpelican/cookiecutter-pelican-plugin",
+      "_commit": "d99e9a4a665b686793d440bba1f0da7454c41611"
+    }
+  },
+  "directory": null
+}
