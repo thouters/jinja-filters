@@ -10,7 +10,6 @@ repos:
       - id: check-added-large-files
       - id: check-ast
       - id: check-case-conflict
-      - id: check-docstring-first
       - id: check-merge-conflict
       - id: check-toml
       - id: check-yaml
@@ -26,3 +25,5 @@ repos:
       - id: ruff
       - id: ruff-format
         args: ["--check"]
+
+exclude: "test"

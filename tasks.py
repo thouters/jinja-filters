@@ -55,7 +55,10 @@ def ruff(c, concise=False, fix=False, diff=False):
         fix_flag = "--fix"
     if diff:
         diff_flag = "--diff"
-    c.run(f"{CMD_PREFIX}ruff check {concise_flag} {diff_flag} {fix_flag} .", pty=PTY)
+    c.run(
+        f"{CMD_PREFIX}ruff check {concise_flag} {diff_flag} {fix_flag} {PKG_PATH}",
+        pty=PTY,
+    )
 
 
 @task
