@@ -30,11 +30,16 @@ will also install the required dependencies (currently ``pelican`` and
 
 .. code-block:: sh
 
-  pip install pelican-jinja-filters
+  python -m pip install pelican-jinja-filters
 
 As ``Jinja Filters`` is a namespace plugin, assuming you are using Pelican 4.5
 (or newer) **and** *only* other namespace plugins, ``Jinja Filters`` will be
-automatically be loaded by Pelican. And that's it!
+automatically be loaded by Pelican. And that's it! As long as you have not
+explicitly added a ``PLUGINS`` setting to your Pelican settings file, then the
+newly-installed plugin should be automatically detected and enabled.
+Otherwise, you must add ``jinja_filters`` to your existing ``PLUGINS`` list.
+For more information, please see the documentation regarding
+`How to Use Plugins <https://docs.getpelican.com/en/latest/plugins.html#how-to-use-plugins>`_.
 
 If you are using an older version of Pelican, or non-namespace plugins, you may
 need to add ``Jinja Filters`` to your ``pelicanconf.py``:
