@@ -19,17 +19,16 @@ logger = logging.getLogger(__name__)
 
 
 def datetime(value, format_str="%Y/%m/%d %H:%M"):
-    """
-    Convert a datetime to a different format.
+    """Convert a datetime to a different format.
 
     The default format looks like --> 2016/11/25 12:34
 
-    Args
+    Args:
     ----
         value (datetime.datetime): input date and time
         format_str (str): The datetime format string to apply to value
 
-    Returns
+    Returns:
     -------
         str: value, after the format_str has been applied
 
@@ -48,22 +47,21 @@ def datetime(value, format_str="%Y/%m/%d %H:%M"):
 
 
 def article_date(value):
-    """
-    Convert a date to the format we want it displayed on the article template.
+    """Convert a date to the format we want it displayed on the article template.
 
     Format looks like --> Friday, November 4, 2020
 
-    Args
+    Args:
     ----
         value (datetime.datetime): input date
 
-    Returns
+    Returns:
     -------
         str: value, formatted nicely for displaying the date.
 
     """
     try:
-        return "{dt:%A}, {dt:%B} {dt.day}, {dt.year}".format(dt=value)
+        return f"{value:%A}, {value:%B} {value.day}, {value.year}"
     except ValueError as e:
         logger.error(
             "%s ValueError. value: %s, type(value): %s", LOG_PREFIX, value, type(value)
@@ -72,8 +70,7 @@ def article_date(value):
 
 
 def datetime_from_period(value):
-    """
-    Converts "period" into a datetime object.
+    """Convert "period" into a datetime object.
 
     On yearly/monthly/daily archive pages, a "period" object is supplied so you
     know what timeperiod the particular archive page is for. This converts it
@@ -88,11 +85,11 @@ def datetime_from_period(value):
 
     If passes a single integer, it is assumed to represent a year.
 
-    Args
+    Args:
     ----
         value (tuple or int): input period
 
-    Returns
+    Returns:
     -------
         datetime.datetime: value converted
 
@@ -114,21 +111,21 @@ def datetime_from_period(value):
             str(value[2]) if len(value) >= 3 else "1",
         )
     )
-    new_datetime = SafeDatetime.strptime(new_value, "%Y %B %d")
-    return new_datetime
+    return SafeDatetime.strptime(new_value, "%Y %B %d")
 
 
 def merge_date_url(value, url):
-    """
+    """Merge date URL.
+
     Given a Pelican setting URL that contains a placeholder for a date, and a
     date, it will combine the two to return the resulting URL.
 
-    Args
+    Args:
     ----
         value (datetime.datetime): a date
         url (string): a Pelican URL setting
 
-    Returns
+    Returns:
     -------
         string: combined URL
 
@@ -153,30 +150,28 @@ def merge_date_url(value, url):
 
 
 def breaking_spaces(value):
-    """
-    Convert non-breaking spaces to regular spaces.
+    """Convert non-breaking spaces to regular spaces.
 
-    Args
+    Args:
     ----
         value (str): input value
 
-    Returns
+    Returns:
     -------
         str: the input string, now with regular spaces
 
     """
-    return value.replace("\u00A0", " ")
+    return value.replace("\u00a0", " ")
 
 
 def titlecase(value):
-    """
-    Returns the titlecased version of the supplied text.
+    """Return the titlecased version of the supplied text.
 
-    Args
+    Args:
     ----
         value (str): input value
 
-    Returns
+    Returns:
     -------
         str: value, titlecase formatted
 

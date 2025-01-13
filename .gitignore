@@ -49,4 +49,5 @@ venv*/
 
 content-2/
 
-poetry.lock
+.pdm-python
+pdm.lock

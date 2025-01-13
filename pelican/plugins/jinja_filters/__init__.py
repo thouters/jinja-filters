@@ -1,6 +1,4 @@
-"""
-``Jinja Filters`` is a plugin for `Pelican <http://docs.getpelican.com/>`_,
-a static site generator written in Python.
+"""Jinja Filters is a plugin for Pelican, a static site generator written in Python.
 
 ``Jinja Filters`` provides a selection of functions (called *filters*) for
 templates to use when building your website. They are packaged for Pelican, but
